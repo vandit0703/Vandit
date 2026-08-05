@@ -4,29 +4,58 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { FaWhatsapp } from "react-icons/fa";
 import { TypeAnimation } from "react-type-animation";
-import { 
-FaPython,
-FaNodeJs,
-FaReact,
-FaHtml5,
-FaCss3Alt,
-FaDocker,
-FaGitAlt,
-FaLinux,
-FaServer,
-FaCloud,
-FaCode,
-FaCogs
+import {
+  FaPython,
+  FaReact,
+  FaNodeJs,
+  FaHtml5,
+  FaCss3Alt,
+  FaDocker,
+  FaLinux,
+  FaGitAlt,
+  FaServer,
+  FaCode,
+  FaCogs,
+  FaCloud,
+  FaPhp,
+  FaJava,
+  FaBootstrap,
+  FaGithub,
+  FaLock,
+  FaFigma,
+  FaRobot,
+  FaMicrophone,
+  FaBrain,
+  FaLink,
+  FaLayerGroup,
+  FaWpforms,
+  FaDatabase,
+  FaCheckCircle,
+
 } from "react-icons/fa";
 
 import {
-SiDjango,
-SiPostgresql,
-SiJavascript,
-SiTypescript,
-SiNextdotjs,
-SiRedis,
-SiNginx
+  SiDjango,
+  SiPostgresql,
+  SiJavascript,
+  SiTypescript,
+  SiNextdotjs,
+  SiRedis,
+  SiNginx,
+  SiTailwindcss,
+  SiMysql,
+  SiSqlite,
+  SiExpress,
+  SiLaravel,
+  SiFastapi,
+  SiVercel,
+  SiRender,
+  SiNetlify,
+  SiPostman,
+  SiGithubactions,
+  SiThreedotjs,
+  SiFramer,
+  
 } from "react-icons/si";
 import { ArrowRight, Code2, Database, LayoutTemplate, Server, Settings, Terminal, ExternalLink, Github as GithubIcon, Star, CheckCircle2, Mail, Phone } from "lucide-react";
 import useEmblaCarousel from "embla-carousel-react";
@@ -121,8 +150,8 @@ function HeroSection() {
           </div>
           <div className="mt-16 grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-3xl mx-auto">
               {[
-                { value: "3+", label: "Years Experience" },
-                { value: "35+", label: "Projects Completed" },
+                { value: "4+", label: "Years Experience" },
+                { value: "45+", label: "Projects Completed" },
                 { value: "35+", label: "Happy Clients" }
               ].map((stat, index) => (
                 <motion.div
@@ -146,107 +175,250 @@ function HeroSection() {
 function AboutSection() {
 
   const skills = [
+    // Languages
     { name: "Python", icon: FaPython, color: "text-blue-400" },
-    { name: "Django", icon: SiDjango, color: "text-green-600" },
-    { name: "PostgreSQL", icon: SiPostgresql, color: "text-blue-300" },
     { name: "JavaScript", icon: SiJavascript, color: "text-yellow-400" },
-    { name: "React", icon: FaReact, color: "text-cyan-400" },
-    { name: "Node.js", icon: FaNodeJs, color: "text-green-500" },
+    { name: "TypeScript", icon: SiTypescript, color: "text-blue-500" },
+    { name: "PHP", icon: FaPhp, color: "text-indigo-400" },
+    { name: "Java", icon: FaJava, color: "text-red-500" },
+
+    // Frontend
     { name: "HTML5", icon: FaHtml5, color: "text-orange-500" },
     { name: "CSS3", icon: FaCss3Alt, color: "text-blue-500" },
-
-    { name: "TypeScript", icon: SiTypescript, color: "text-blue-500" },
+    { name: "React", icon: FaReact, color: "text-cyan-400" },
     { name: "Next.js", icon: SiNextdotjs, color: "text-white" },
+    { name: "Tailwind CSS", icon: SiTailwindcss, color: "text-cyan-400" },
+    { name: "Bootstrap", icon: FaBootstrap, color: "text-purple-500" },
+    { name: "Three.js", icon: SiThreedotjs, color: "text-white" },
+    { name: "Framer Motion", icon: SiFramer, color: "text-pink-500" },
+    { name: "shadcn/ui", icon: FaLayerGroup, color: "text-gray-300" },
+    { name: "React Hook Form", icon: FaWpforms, color: "text-pink-400" },
+    { name: "TanStack Query", icon: FaDatabase, color: "text-red-400" },
+    { name: "Zod", icon: FaCheckCircle, color: "text-blue-400" },
 
+    // Backend
+    { name: "Django", icon: SiDjango, color: "text-green-600" },
+    { name: "Django REST Framework", icon: FaServer, color: "text-emerald-500" },
+    { name: "Node.js", icon: FaNodeJs, color: "text-green-500" },
+    { name: "Express.js", icon: SiExpress, color: "text-gray-300" },
+    { name: "Laravel", icon: SiLaravel, color: "text-red-500" },
+    { name: "FastAPI", icon: SiFastapi, color: "text-teal-400" },
+
+    // Databases
+    { name: "MySQL", icon: SiMysql, color: "text-blue-600" },
+    { name: "PostgreSQL", icon: SiPostgresql, color: "text-blue-300" },
+    { name: "SQLite", icon: SiSqlite, color: "text-sky-400" },
     { name: "Redis", icon: SiRedis, color: "text-red-500" },
 
+    // DevOps & Cloud
     { name: "Docker", icon: FaDocker, color: "text-blue-500" },
     { name: "Nginx", icon: SiNginx, color: "text-green-500" },
     { name: "Linux", icon: FaLinux, color: "text-yellow-500" },
     { name: "Git", icon: FaGitAlt, color: "text-orange-600" },
+    { name: "GitHub", icon: FaGithub, color: "text-white" },
+    { name: "CI/CD", icon: FaCogs, color: "text-gray-400" },
+    { name: "Cloud", icon: FaCloud, color: "text-orange-400" },
 
+    
+
+    // APIs & Services
+    { name: "REST APIs", icon: FaCode, color: "text-indigo-400" },
+    { name: "JWT Authentication", icon: FaLock, color: "text-yellow-500" },
     { name: "Celery", icon: FaServer, color: "text-purple-400" },
 
-    { name: "REST APIs", icon: FaCode, color: "text-indigo-400" },
-    { name: "CI/CD", icon: FaCogs, color: "text-gray-400" },
-    { name: "Cloud", icon: FaCloud, color: "text-orange-400" }
+    // Tools
+    // { name: "VS Code", icon: SiVisualstudiocode, color: "text-blue-500" },
+    { name: "Postman", icon: SiPostman, color: "text-orange-500" },
+    { name: "Figma", icon: FaFigma, color: "text-pink-500" },
+    // { name: "GitHub Actions", icon: SiGithubactions, color: "text-blue-500" },
+
+    // AI
+    { name: "OpenAI API", icon: FaRobot, color: "text-green-400" },
+    { name: "Whisper AI", icon: FaMicrophone, color: "text-purple-400" },
+    { name: "Prompt Engineering", icon: FaBrain, color: "text-pink-400" },
+    { name: "Ollama", icon: FaRobot, color: "text-emerald-500" },
+    { name: "Qwen", icon: FaBrain, color: "text-cyan-400" },
+    { name: "DeepSeek", icon: FaBrain, color: "text-indigo-400" },
+    { name: "LangChain", icon: FaLink, color: "text-lime-400" },
+  ];
+
+  const stats = [
+    { label: "45+ Projects Completed", value: "45+" },
+    { label: "35+ Happy Clients", value: "35+" },
+    { label: "4+ Years Experience", value: "4+" },
+    { label: "100% Project Delivery", value: "100%" },
+  ];
+
+  const builds = [
+    "ERP Systems",
+    "CRM Software",
+    "Business Automation",
+    "SaaS Platforms",
+    "E-Commerce",
+    "Hospital Management",
+    "Inventory Systems",
+    "REST APIs",
+    "Admin Dashboards",
+    "Custom Web Applications",
+  ];
+
+  const expertise = [
+    { label: "Backend Development", percent: 95 },
+    { label: "Frontend Development", percent: 90 },
+    { label: "Database Design", percent: 92 },
+    { label: "API Development", percent: 94 },
+    { label: "System Architecture", percent: 90 },
   ];
 
   return (
     <section id="about" className="py-24 bg-card/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid lg:grid-cols-[55%_45%] gap-16 items-stretch">
           <Reveal direction="right">
-            <div className="space-y-6">
-              <h2 className="text-4xl md:text-5xl font-display font-bold">
-                About <span className="text-primary">Me</span>
-              </h2>
-              <div className="glass-card p-8 rounded-3xl space-y-4">
-                <p className="text-lg text-muted-foreground leading-relaxed">
-                I’m a Full Stack Developer focused on building powerful custom software that solves real business problems. 
-                Over the past few years, I’ve developed ERP systems, CRM platforms, SaaS applications, and automation tools 
-                for businesses across multiple industries.
-                </p>
+            <div className="space-y-10 h-full">
+              <div className="space-y-6">
+                <div className="inline-flex items-center gap-3 rounded-full border border-primary/20 bg-primary/10 px-4 py-2 text-sm text-primary shadow-[0_0_30px_rgba(168,85,247,0.15)]">
+                  <span className="h-2 w-2 rounded-full bg-emerald-400 shadow-[0_0_15px_rgba(52,211,153,0.7)]" />
+                  🟢 Available for Freelance Projects
+                </div>
 
-                <p className="text-lg text-muted-foreground leading-relaxed">
-                My core expertise lies in backend architecture using Django, Node.js, and PostgreSQL, combined with modern 
-                frontend technologies like React and TypeScript. I enjoy designing systems that are scalable, secure, and 
-                easy for businesses to operate daily.
-                </p>
+                <h2 className="text-4xl md:text-5xl font-display font-bold">
+                  About <span className="text-primary">Me</span>
+                </h2>
 
-                <p className="text-lg text-muted-foreground leading-relaxed">
-                From manufacturing ERP systems to hospital management platforms and business automation software, 
-                my goal is always the same: build technology that improves efficiency and helps companies grow.
-                </p>
+                <div className="glass-card p-8 rounded-3xl space-y-4 border border-white/10 shadow-[0_0_40px_rgba(168,85,247,0.08)]">
+                  <p className="text-lg text-muted-foreground leading-relaxed">
+                    I’m a Full Stack Developer focused on building powerful custom software that solves real business problems.
+                    Over the past few years, I’ve developed ERP systems, CRM platforms, SaaS applications, and automation tools
+                    for businesses across multiple industries.
+                  </p>
+
+                  <p className="text-lg text-muted-foreground leading-relaxed">
+                    My core expertise lies in backend architecture using Django, Node.js, and PostgreSQL, combined with modern
+                    frontend technologies like React and TypeScript. I enjoy designing systems that are scalable, secure, and
+                    easy for businesses to operate daily.
+                  </p>
+
+                  <p className="text-lg text-muted-foreground leading-relaxed">
+                    From manufacturing ERP systems to hospital management platforms and business automation software,
+                    my goal is always the same: build technology that improves efficiency and helps companies grow.
+                  </p>
+                </div>
+
+                <div className="grid sm:grid-cols-2 gap-4">
+                  {[
+                    "Custom ERP & CRM Systems",
+                    "Business Automation Platforms",
+                    "Scalable Web Applications",
+                    "API Integrations & Backend Architecture",
+                  ].map((item) => (
+                    <div key={item} className="flex items-center gap-3 rounded-3xl border border-white/10 bg-white/5 p-4 shadow-[0_0_30px_rgba(255,255,255,0.03)]">
+                      <CheckCircle2 className="text-primary" size={20} />
+                      <span className="text-sm font-medium text-muted-foreground">{item}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
-              
-              <div className="mt-6 space-y-3">
-                <div className="flex items-center gap-3">
-                  <CheckCircle2 className="text-primary" size={20} />
-                  <span>Custom ERP & CRM Systems</span>
-                </div>
 
-                <div className="flex items-center gap-3">
-                  <CheckCircle2 className="text-primary" size={20} />
-                  <span>Business Automation Platforms</span>
-                </div>
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+                className="grid sm:grid-cols-2 gap-4"
+              >
+                {stats.map((stat) => (
+                  <div key={stat.label} className="glass-card rounded-3xl border border-white/10 bg-white/5 p-6 shadow-[0_0_30px_rgba(168,85,247,0.12)]">
+                    <p className="text-3xl font-bold text-primary">{stat.value}</p>
+                    <p className="mt-3 text-sm text-muted-foreground">{stat.label}</p>
+                  </div>
+                ))}
+              </motion.div>
 
-                <div className="flex items-center gap-3">
-                  <CheckCircle2 className="text-primary" size={20} />
-                  <span>Scalable Web Applications</span>
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.35 }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+                className="glass-card rounded-3xl border border-white/10 bg-white/5 p-8 shadow-[0_0_40px_rgba(168,85,247,0.08)]"
+              >
+                <h3 className="text-2xl font-semibold">What I Build</h3>
+                <div className="mt-6 flex flex-wrap gap-3">
+                  {builds.map((badge) => (
+                    <span key={badge} className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-muted-foreground transition hover:border-primary/40 hover:text-white">
+                      {badge}
+                    </span>
+                  ))}
                 </div>
+              </motion.div>
 
-                <div className="flex items-center gap-3">
-                  <CheckCircle2 className="text-primary" size={20} />
-                  <span>API Integrations & Backend Architecture</span>
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.35 }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+                className="glass-card rounded-3xl border border-white/10 bg-white/5 p-8 shadow-[0_0_40px_rgba(168,85,247,0.08)]"
+              >
+                <div className="flex items-center justify-between gap-4">
+                  <h3 className="text-2xl font-semibold">Core Expertise</h3>
+                  <span className="text-xs uppercase tracking-[0.24em] text-muted-foreground">Expertise</span>
                 </div>
-              </div>
+                <div className="mt-6 space-y-5">
+                  {expertise.map((item) => (
+                    <div key={item.label} className="space-y-2">
+                      <div className="flex items-center justify-between text-sm font-medium text-muted-foreground">
+                        <span>{item.label}</span>
+                        <span>{item.percent}%</span>
+                      </div>
+                      <div className="h-3 overflow-hidden rounded-full bg-white/10">
+                        <motion.div
+                          className="h-full rounded-full bg-gradient-to-r from-primary to-accent"
+                          initial={{ width: 0 }}
+                          whileInView={{ width: `${item.percent}%` }}
+                          viewport={{ once: true, amount: 0.4 }}
+                          transition={{ duration: 1.2, ease: "easeOut" }}
+                        />
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.35 }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+                className="glass-card rounded-3xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-8 shadow-[0_0_40px_rgba(168,85,247,0.08)]"
+              >
+                <h3 className="text-2xl font-semibold">🚀 Currently Working On</h3>
+                <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
+                  An AI-powered Corporate Meeting Intelligence Platform that automatically converts client meetings into structured project workflows. The AI captures meeting conversations, understands client requirements, generates tasks and milestones, creates meeting summaries, and builds a project dashboard in real time. At the end of every meeting, clients receive a clear overview of requirements, assigned tasks, timelines, and project progress, enabling seamless collaboration from the first discussion to final delivery.
+                </p>
+              </motion.div>
             </div>
           </Reveal>
-          
+
           <Reveal direction="left" delay={0.2}>
             <div className="space-y-8">
-              <h3 className="text-5xl font-display font-semibold">Tech Stack</h3>
+              <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+                <div>
+                  <h3 className="text-5xl font-display font-semibold">Tech Stack</h3>
+                  <p className="mt-3 text-sm text-muted-foreground">Modern tools and frameworks I use to build premium solutions.</p>
+                </div>
+                
+              </div>
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
                 {skills.map((skill, index) => (
                   <motion.div
-                      key={skill.name}
-                      animate={{ y: [0, -10, 0] }}
-                      transition={{
-                        duration: 3,
-                        repeat: Infinity,
-                        ease: "easeInOut",
-                        delay: index * 0.1
-                      }}
-                      whileHover={{ scale: 1.15, rotate: 5 }}
-                      className="relative p-6 rounded-2xl flex flex-col items-center justify-center gap-3 
-                      bg-gradient-to-br from-white/5 to-white/0 border border-white/10
-                      hover:border-primary/60 hover:shadow-[0_0_30px_rgba(168,85,247,0.4)]
-                      transition-all duration-300 group overflow-hidden"
-                    >
-                    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-br from-primary/20 to-accent/20 blur-xl" />
-                    <skill.icon className={`text-5xl opacity-70 group-hover:opacity-100 transition-opacity ${skill.color}`} />
-                    <span className="text-sm font-medium text-muted-foreground group-hover:text-foreground">{skill.name}</span>
+                    key={skill.name}
+                    animate={{ y: [0, -10, 0] }}
+                    transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: index * 0.08 }}
+                    whileHover={{ scale: 1.08, rotate: 3 }}
+                    className="group relative flex min-h-[180px] flex-col items-center justify-center gap-4 overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-white/5 to-white/0 p-6 text-center transition-all duration-300 hover:border-primary/60 hover:shadow-[0_0_30px_rgba(168,85,247,0.35)]"
+                  >
+                    <div className="absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100 bg-gradient-to-br from-primary/20 to-accent/20 blur-xl" />
+                    <skill.icon className={`relative z-10 text-5xl opacity-80 ${skill.color}`} />
+                    <span className="relative z-10 block text-sm font-medium text-muted-foreground">{skill.name}</span>
                   </motion.div>
                 ))}
               </div>
