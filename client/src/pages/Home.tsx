@@ -150,7 +150,7 @@ function HeroSection() {
           </div>
           <div className="mt-16 grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-3xl mx-auto">
               {[
-                { value: "4+", label: "Years Experience" },
+                { value: "3+", label: "Years Experience" },
                 { value: "45+", label: "Projects Completed" },
                 { value: "35+", label: "Happy Clients" }
               ].map((stat, index) => (
@@ -245,7 +245,7 @@ function AboutSection() {
   const stats = [
     { label: "45+ Projects Completed", value: "45+" },
     { label: "35+ Happy Clients", value: "35+" },
-    { label: "4+ Years Experience", value: "4+" },
+    { label: "3+ Years Experience", value: "3+" },
     { label: "100% Project Delivery", value: "100%" },
   ];
 
