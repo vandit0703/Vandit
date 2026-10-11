@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f7f4ed" />
+    <meta name="description" content="An ERP system for brass manufacturers covering production workflows, inventory, suppliers, quotations, billing, accounting, and order tracking." />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Brass Manufacturing ERP System — Project — Vandit Katbamna" />
+    <meta property="og:description" content="An ERP system for brass manufacturers covering production workflows, inventory, suppliers, quotations, billing, accounting, and order tracking." />
+    <meta property="og:image" content="/Screenshot%20(52).png" />
+    <meta property="og:image:alt" content="Brass manufacturing ERP dashboard" />
+    <meta property="og:url" content="" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Brass Manufacturing ERP System — Project — Vandit Katbamna" />
+    <meta name="twitter:description" content="An ERP system for brass manufacturers covering production workflows, inventory, suppliers, quotations, billing, accounting, and order tracking." />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <title>Brass Manufacturing ERP System — Project — Vandit Katbamna</title>
+    <script>
+      (() => {
+        const canonical = new URL(window.location.pathname, window.location.origin).href;
+        let link = document.head.querySelector('link[rel="canonical"]');
+        if (!link) {
+          link = document.createElement("link");
+          link.rel = "canonical";
+          document.head.append(link);
+        }
+        link.href = canonical;
+        const image = document.head.querySelector('meta[property="og:image"]');
+        const imageUrl = image ? new URL(image.content, window.location.origin).href : "";
+        const urlMeta = document.head.querySelector('meta[property="og:url"]');
+        if (urlMeta) urlMeta.content = canonical;
+        if (image) image.content = imageUrl;
+
+        const metadata = {
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          name: document.title,
+          description:
+            document.head.querySelector('meta[name="description"]')?.content ?? "",
+          url: canonical,
+          isPartOf: {
+            "@type": "WebSite",
+            name: "Vandit Katbamna",
+            url: window.location.origin,
+          },
+          about: {
+            "@type": "Person",
+            name: "Vandit Katbamna",
+            jobTitle: "Full Stack Developer",
+            url: window.location.origin,
+            sameAs: [
+              "https://github.com/vandit0703",
+              "https://linkedin.com/in/katbamna-vandit-115122327",
+            ],
+          },
+          ...(window.location.pathname.startsWith("/projects/")
+            ? {
+                breadcrumb: {
+                  "@type": "BreadcrumbList",
+                  itemListElement: [
+                    {
+                      "@type": "ListItem",
+                      position: 1,
+                      name: "Home",
+                      item: new URL("/", window.location.origin).href,
+                    },
+                    {
+                      "@type": "ListItem",
+                      position: 2,
+                      name: "Projects",
+                      item: new URL("/projects", window.location.origin).href,
+                    },
+                    {
+                      "@type": "ListItem",
+                      position: 3,
+                      name: document.title.replace(
+                        " — Project — Vandit Katbamna",
+                        "",
+                      ),
+                      item: canonical,
+                    },
+                  ],
+                },
+              }
+            : {}),
+        };
+        const jsonLd = document.createElement("script");
+        jsonLd.id = "page-jsonld";
+        jsonLd.type = "application/ld+json";
+        jsonLd.textContent = JSON.stringify(metadata);
+        document.head.append(jsonLd);
+      })();
+    </script>
+    <script type="module" crossorigin src="/assets/index-B8Pfn_KN.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-KT1DdFdd.css">
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>

@@ -1,21 +1,21 @@
-import { Card, CardContent } from "@/components/ui/card";
-import { AlertCircle } from "lucide-react";
+import { Link } from "wouter";
+import { SiteLayout } from "@/components/layout/SiteLayout";
 
 export default function NotFound() {
   return (
-    <div className="min-h-screen w-full flex items-center justify-center bg-gray-50">
-      <Card className="w-full max-w-md mx-4">
-        <CardContent className="pt-6">
-          <div className="flex mb-4 gap-2">
-            <AlertCircle className="h-8 w-8 text-red-500" />
-            <h1 className="text-2xl font-bold text-gray-900">404 Page Not Found</h1>
-          </div>
-
-          <p className="mt-4 text-sm text-gray-600">
-            Did you forget to add the page to the router?
+    <SiteLayout path={window.location.pathname}>
+      <section className="page-frame not-found">
+        <div>
+          <span className="eyebrow">That page isn’t here</span>
+          <h1>404</h1>
+          <p className="section-copy">
+            The page may have moved, or the address may be mistyped.
           </p>
-        </CardContent>
-      </Card>
-    </div>
+          <Link href="/" className="action-button" style={{ marginTop: 20 }}>
+            Back to the home page <span aria-hidden="true">↗</span>
+          </Link>
+        </div>
+      </section>
+    </SiteLayout>
   );
 }

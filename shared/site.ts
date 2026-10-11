@@ -1,0 +1,17 @@
+export const publicRoutes = [
+  "/",
+  "/about",
+  "/services",
+  "/projects",
+  "/projects/photographer-saas",
+  "/projects/brass-manufacturing-erp",
+  "/projects/hospital-management",
+  "/projects/jewelry-ecommerce",
+  "/projects/crm-business-automation",
+  "/projects/transport-management",
+  "/projects/medical-store-management",
+  "/projects/restaurant-management",
+  "/projects/linkguard-browser",
+  "/tech-stack",
+  "/contact",
+] as const;

@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import { ReactNode } from "react";
 
 interface RevealProps {
@@ -9,6 +9,7 @@ interface RevealProps {
 }
 
 export function Reveal({ children, delay = 0, direction = "up", className = "" }: RevealProps) {
+  const shouldReduceMotion = useReducedMotion();
   const directions = {
     up: { y: 40, x: 0 },
     down: { y: -40, x: 0 },
@@ -18,12 +19,12 @@ export function Reveal({ children, delay = 0, direction = "up", className = "" }
 
   return (
     <motion.div
-      initial={{ opacity: 0, ...directions[direction] }}
+      initial={shouldReduceMotion ? false : { opacity: 0, ...directions[direction] }}
       whileInView={{ opacity: 1, x: 0, y: 0 }}
       viewport={{ once: true, margin: "-10%" }}
       transition={{
-        duration: 0.7,
-        delay: delay,
+        duration: shouldReduceMotion ? 0 : 0.7,
+        delay: shouldReduceMotion ? 0 : delay,
         ease: [0.21, 0.47, 0.32, 0.98],
       }}
       className={className}

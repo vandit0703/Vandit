@@ -2,6 +2,7 @@ import express, { type Request, Response, NextFunction } from "express";
 import { registerRoutes } from "./routes";
 import { serveStatic } from "./static";
 import { createServer } from "http";
+import { registerSeoRoutes } from "./seo";
 
 const app = express();
 const httpServer = createServer(app);
@@ -79,9 +80,11 @@ app.use((req, res, next) => {
   // setting up all the other routes so the catch-all route
   // doesn't interfere with the other routes
   if (process.env.NODE_ENV === "production") {
+    registerSeoRoutes(app);
     serveStatic(app);
   } else {
     const { setupVite } = await import("./vite");
+    registerSeoRoutes(app);
     await setupVite(httpServer, app);
   }
 
